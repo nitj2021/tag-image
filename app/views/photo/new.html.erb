@@ -1,0 +1,22 @@
+<html>
+<body bgcolor="#daa520">
+<div><b style="margin-left:450px;font-size: 60px"><%= Album.get_name(@id) %></b><br/>
+<b  style="margin-left:450px;font-size:30px">Click multiple time on +Add Photo for multiple uploads</b></div>
+<%= form_tag({:controller=>"photo", :action=>"create", :id=>@id}, :multipart => true, :method=>"POST") do |f| %>
+    <div id="header1">
+      <div align="center">
+        <%= link_to "+Add photo", "/", :id=>"add_new_photo" %>
+      </div>
+    </div>
+    <div class="add_pic_div">
+      <div id="add_pic_here" align=center></div>
+      <br/>
+    </div>
+    <div id="foot">
+      <div align="center">
+        <%= submit_tag "Submit" %>
+      </div>
+    </div>
+    <%= hidden_field_tag :total_uploads %>
+<% end %>  <div align=center></div> </body>
+</html>

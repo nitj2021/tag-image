@@ -1,0 +1,4 @@
+$("#delete_<%= params[:id]%>").remove()
+var total_pic=$("#header").children(1).text().split('(')[1].slice(0,-1);
+total_pic= parseInt(total_pic)-1;
+$("#header").children(1).text(" Total Pics("+total_pic+")")

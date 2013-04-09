@@ -1,0 +1,2 @@
+$("#delete_<%= params[:id]%>").remove();
+$("#header").children(1).text(" Total Album's(<%= current_user.albums.count %>)")

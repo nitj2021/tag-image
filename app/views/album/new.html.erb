@@ -1,0 +1,13 @@
+<html>
+<body bgcolor="#daa520" align=center>
+<div id="header">
+  Create New Album
+</div>
+<%= form_tag(:controller=>"album", :action=>"create", :onSubmit=>"return dup_name()") do |f| %>
+    <div class="sub_view" style="height:100px">
+      <p>name <%= text_field_tag :name, "", :id=>"album_name" %></p>
+
+      <p><%= submit_tag "save", :id=>"save_new_album" %></p></div>
+<% end %>
+</body>
+</html>

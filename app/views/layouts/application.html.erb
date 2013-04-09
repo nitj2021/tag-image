@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "jquery-1.7.2.min","application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<div id="user_nav">
+  <% if user_signed_in? %>
+      <%=link_to "Home",'/'%>
+    Signed in as <%= current_user.email %>. Not you?
+    <%= link_to "Sign out", destroy_user_session_path,:method=>:delete %>       Go to <%= link_to "View Album" , album_index_path %>
+  <% else %>
+    <%= link_to "Sign up", new_user_registration_path %> or
+    <%= link_to "Sign in", new_user_session_path %>
+
+  <% end %>
+
+</div>
+      <h2 style="bottom: 0;color:black;"><b><marquee> Created BY Nitin Jain</marquee></b></h2>
+<%= yield %>
+
+</body>
+</html>

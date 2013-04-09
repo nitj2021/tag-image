@@ -1,0 +1,27 @@
+<html>
+<body bgcolor="#daa520">
+<b>click anywhere in picture to add tag. After type tag name please press enter to save the tag</b>
+
+<div id="to_add_new_tags">
+  <%= image_tag @photo.picture.url, :id=>"create_tag" %>
+  <%= hidden_field_tag :id, @photo.id %>
+  <% i=0 %>
+  <% @photo.tag.each do |f| %>
+    <span class="tags" id="highlight_tag_<%= i %>" style="top: <%=@photo.y_cord[i]%>px;left:<%=@photo.x_cord[i]%>px; "><%= f %>
+          </span>
+      <% i=i+1 %>
+  <% end %>
+  <%= text_field_tag :tag_name, "", :id=>"tag_text", :style=>"display: none;" %>
+  <br/>
+
+  <div id="add_tag_name">
+    <% i=0 %>You Have Tageed
+    <% @photo.tag.each do |f| %>
+        <%= i!=0 ? "," : "" %>
+        <label class="tags_name" id="tag_<%= i %>"><%= f %></label>
+        <% i=i+1 %>
+    <% end %>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+<body bgcolor="#daa520">
+<h1 align=center>Your Album's</h1>
+<div id="header">
+  <div align="center">
+    Total Album's(<%= current_user.albums.count %>)
+  </div>
+</div>
+<div id="main_view">
+  <div class="sub_view">
+    <% @albums.each do |f| %>
+					<span class="each_pic" id="delete_<%= f.id %>">
+                      <%= link_to(image_tag("empty_album.png", :class=>"thumb_pic"), photo_index_path(:id=>f.id), :method=>"get") %>
+                      <div align="center" class="album_name">
+                        <ul class="name" style="list-style:none;padding:0">
+                          <li><%= f.name %></li>
+                        </ul>
+                      </div>
+                      <div align="center" class="del_div">
+                        <ul class="del">
+                          <li><%= link_to "Delete", "/album/#{f.id}", :method=>"delete", :remote=>true, :confirm=>"Are you sure to delete Album #{f.name}?" %></li>
+                        </ul>
+                      </div>
+					</span>
+    <% end %>
+  </div>
+</div>
+</body>
+</html>

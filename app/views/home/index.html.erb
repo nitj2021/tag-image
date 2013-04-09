@@ -1,0 +1,9 @@
+<html>
+<body bgcolor="#daa520">
+<div align=center>
+<h2>Welcome: <%= current_user.email %> </h2>
+  <h3>Enjoy creating albums ,adding photos to them and adding tag to them</h3>
+<p>  <%= link_to "Create New album" , new_album_path %></p>
+<p> <%= link_to "View Album" , album_index_path %></p>
+</div></body>
+</html>
