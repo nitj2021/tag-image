@@ -3,7 +3,7 @@
 <b>click anywhere in picture to add tag. After type tag name please press enter to save the tag</b>
 
 <div id="to_add_new_tags">
-  <%= image_tag @photo.picture.url(:medium), :id=>"create_tag" %>
+  <%= image_tag @photo.picture.url, :id=>"create_tag" %>
   <%= hidden_field_tag :id, @photo.id %>
   <% i=0 %>
   <% @photo.tag.each do |f| %>
