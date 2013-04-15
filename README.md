@@ -3,3 +3,5 @@ User should be able to upload multiple photos while creating new album by clicki
  accepts_nested_attributes for multimodel form.
  Photos can also have multiple tags(comma separated)(no tagging plugin/gem). 
 . Also includes Unit and Functional test.
+
+http://tag-image.herokuapp.com
