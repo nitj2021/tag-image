@@ -11,7 +11,7 @@
   <div class="sub_view">
     <% @album.photos.each do |f| %>
 					<span class="each_pic" id="delete_<%= f.id %>">
-               		<%= link_to(image_tag(f.picture.url(:thumb), :class=>"thumb_pic"), photo_path(f.id), :method=>:get) %>                                            <%# if !a.photo_file_name.blank? %>
+               		<%= link_to(image_tag(f.picture.url(thumb), :class=>"thumb_pic"), photo_path(f.id), :method=>:get) %>                                            <%# if !a.photo_file_name.blank? %>
                       <div align="center" class="del_div">
                         <ul class=del>
                           <li><%= link_to "Delete", "/photo/#{f.id}", :method=>"delete", :remote=>true, :confirm => 'Are you sure to delete?' %></li>
