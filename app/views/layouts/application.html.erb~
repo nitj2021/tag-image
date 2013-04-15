@@ -21,7 +21,8 @@
   <% end %>
 
 </div>
-      <h2 style="bottom: 0;color:black;"><b><marquee> Created BY Nitin Jain</marquee></b></h2>
+      <h2 style="bottom: 0;color:black;"><b><marquee> Created BY Nitin Jain
+<br/>(album deleted after sign out to save memory)</marquee></b></h2>
 <%= yield %>
 
 </body>
