@@ -4,6 +4,10 @@ class Photo < ActiveRecord::Base
   serialize :y_cord, Array
   serialize :tag, Array
   has_attached_file :picture,
+      :styles => {
+      :thumb => "100x100#",
+      :small  => "150x150>",
+      :medium => "200x200" },
 
                     :url => "/assets/album/:id/:style/:basename.:extension",
                     :path => ":rails_root/app/assets/images/album/:id/:style/:basename.:extension"
